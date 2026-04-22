@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://ch3coqvoyw3jy"]
+
+[ext_resource type="Script" path="res://Scripts/GameObject/Objects/Player.cs" id="1_joqps"]
+[ext_resource type="Texture2D" uid="uid://3my0nkblonch" path="res://Assets/Images/Placeholder/playerTempo.png" id="2_snbbj"]
+[ext_resource type="Texture2D" uid="uid://c8nh8ogh7h3es" path="res://Assets/Images/Definitif/Player.png" id="3_cjjtd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y5vs0"]
+size = Vector2(32, 30)
+
+[node name="Player" type="Area2D" node_paths=PackedStringArray("playerSprite")]
+z_index = 5
+script = ExtResource("1_joqps")
+playerSprite = NodePath("Sprite2D")
+placeholder = ExtResource("2_snbbj")
+final = ExtResource("3_cjjtd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_y5vs0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("2_snbbj")
+offset = Vector2(0, -3.33337)
+
+[node name="Point" type="Node2D" parent="."]

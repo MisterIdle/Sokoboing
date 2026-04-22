@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://cqo3yciyog725"]
+
+[ext_resource type="Script" path="res://Scripts/UI/Firework.cs" id="1_ysyns"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_sxfvd"]
+particles_animation = true
+particles_anim_h_frames = 2
+particles_anim_v_frames = 3
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_imieq"]
+offsets = PackedFloat32Array(0, 0.315018, 1)
+colors = PackedColorArray(1, 0.458824, 0, 1, 0.999996, 0.485526, 0.423469, 1, 1, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_7uskx"]
+gradient = SubResource("Gradient_imieq")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_0t4yl"]
+particle_flag_disable_z = true
+angle_max = 200.0
+inherit_velocity_ratio = 1.0
+radial_velocity_min = 10.0
+radial_velocity_max = 140.0
+gravity = Vector3(0, -10, 0)
+scale_min = 10.0
+scale_max = 50.0
+color_ramp = SubResource("GradientTexture1D_7uskx")
+
+[node name="Firework" type="GPUParticles2D"]
+z_index = 1000
+material = SubResource("CanvasItemMaterial_sxfvd")
+emitting = false
+amount = 50
+process_material = SubResource("ParticleProcessMaterial_0t4yl")
+lifetime = 3.0
+one_shot = true
+speed_scale = 4.0
+explosiveness = 1.0
+fixed_fps = 100
+script = ExtResource("1_ysyns")

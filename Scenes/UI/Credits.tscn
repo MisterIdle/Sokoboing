@@ -1,0 +1,212 @@
+[gd_scene load_steps=8 format=3 uid="uid://bstxwvv1hbtk7"]
+
+[ext_resource type="Script" path="res://Scripts/UI/Credits.cs" id="1_bdgfb"]
+[ext_resource type="Texture2D" uid="uid://dxmsrf3dw5hal" path="res://Assets/Icon/ic_close.png" id="2_tmt34"]
+[ext_resource type="LabelSettings" uid="uid://rt4tb4lxbe2v" path="res://Assets/Font/Title.tres" id="2_ulikf"]
+[ext_resource type="LabelSettings" uid="uid://daapqx8agwmc5" path="res://Assets/Font/Text.tres" id="3_2d3y2"]
+[ext_resource type="Script" path="res://Scripts/Tools/ResponsiveElement.cs" id="3_qs1wt"]
+[ext_resource type="FontFile" uid="uid://bpea0q5l2dtug" path="res://Assets/Font/Cute Dino.otf" id="4_1jsay"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cule8"]
+font = ExtResource("4_1jsay")
+font_size = 40
+font_color = Color(1, 0.898039, 0.768627, 1)
+
+[node name="Credits" type="Control" node_paths=PackedStringArray("scrollContainer", "creditsContainer", "backBtn")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bdgfb")
+scrollContainer = NodePath("ScrollContainer")
+creditsContainer = NodePath("ScrollContainer/VBoxContainer3")
+backBtn = NodePath("Back")
+scrollDuration = 7.0
+startDelay = 3.5
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -454.0
+offset_top = 38.0
+offset_right = 454.0
+offset_bottom = 196.0
+grow_horizontal = 2
+text = "ID_CREDITS"
+label_settings = ExtResource("2_ulikf")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -336.0
+offset_top = -326.0
+offset_right = 552.0
+offset_bottom = 513.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 85
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/VBoxContainer3"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="ScrollContainer/VBoxContainer3/VBoxContainer"]
+layout_mode = 2
+text = "ID_PROJECT_MANAGER"
+label_settings = ExtResource("3_2d3y2")
+horizontal_alignment = 1
+
+[node name="Julien" type="Label" parent="ScrollContainer/VBoxContainer3/VBoxContainer"]
+layout_mode = 2
+text = "Julien Fournier"
+label_settings = SubResource("LabelSettings_cule8")
+horizontal_alignment = 1
+uppercase = true
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="ScrollContainer/VBoxContainer3"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="ScrollContainer/VBoxContainer3/VBoxContainer2"]
+layout_mode = 2
+text = "ID_GAME_DIRECTOR"
+label_settings = ExtResource("3_2d3y2")
+horizontal_alignment = 1
+
+[node name="Mathieu" type="Label" parent="ScrollContainer/VBoxContainer3/VBoxContainer2"]
+layout_mode = 2
+text = "Mathieu Anthoine"
+label_settings = SubResource("LabelSettings_cule8")
+horizontal_alignment = 1
+uppercase = true
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="ScrollContainer/VBoxContainer3"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="ScrollContainer/VBoxContainer3/VBoxContainer3"]
+layout_mode = 2
+text = "ID_LEAD_GAME_DESIGNER"
+label_settings = ExtResource("3_2d3y2")
+horizontal_alignment = 1
+
+[node name="AlexandreOlivier" type="Label" parent="ScrollContainer/VBoxContainer3/VBoxContainer3"]
+layout_mode = 2
+text = "Alexandre Houdent
+Oliver Besson"
+label_settings = SubResource("LabelSettings_cule8")
+horizontal_alignment = 1
+uppercase = true
+
+[node name="VBoxContainer7" type="VBoxContainer" parent="ScrollContainer/VBoxContainer3"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="ScrollContainer/VBoxContainer3/VBoxContainer7"]
+layout_mode = 2
+text = "ID_ART_DIRECTOR"
+label_settings = ExtResource("3_2d3y2")
+horizontal_alignment = 1
+
+[node name="AlexandreOlivier" type="Label" parent="ScrollContainer/VBoxContainer3/VBoxContainer7"]
+layout_mode = 2
+text = "Damien LE MOAL"
+label_settings = SubResource("LabelSettings_cule8")
+horizontal_alignment = 1
+uppercase = true
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="ScrollContainer/VBoxContainer3"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="ScrollContainer/VBoxContainer3/VBoxContainer4"]
+layout_mode = 2
+text = "ID_GAME_DESIGN_AND_PROGRAMMING"
+label_settings = ExtResource("3_2d3y2")
+horizontal_alignment = 1
+
+[node name="Nom" type="Label" parent="ScrollContainer/VBoxContainer3/VBoxContainer4"]
+layout_mode = 2
+text = "Alexy Houbloup
+Leana Borgne
+Antoine Mansuy
+Liam Jersol"
+label_settings = SubResource("LabelSettings_cule8")
+horizontal_alignment = 1
+uppercase = true
+
+[node name="VBoxContainer8" type="VBoxContainer" parent="ScrollContainer/VBoxContainer3"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="ScrollContainer/VBoxContainer3/VBoxContainer8"]
+layout_mode = 2
+text = "ID_GAME_ART"
+label_settings = ExtResource("3_2d3y2")
+horizontal_alignment = 1
+
+[node name="Léana" type="Label" parent="ScrollContainer/VBoxContainer3/VBoxContainer8"]
+layout_mode = 2
+text = "Leana Borgne"
+label_settings = SubResource("LabelSettings_cule8")
+horizontal_alignment = 1
+uppercase = true
+
+[node name="VBoxContainer6" type="VBoxContainer" parent="ScrollContainer/VBoxContainer3"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="ScrollContainer/VBoxContainer3/VBoxContainer6"]
+layout_mode = 2
+text = "ID_MUSIC_AND_SOUND_DESIGNER"
+label_settings = ExtResource("3_2d3y2")
+horizontal_alignment = 1
+
+[node name="Maxime" type="Label" parent="ScrollContainer/VBoxContainer3/VBoxContainer6"]
+layout_mode = 2
+text = "Maxime Misrahi
+"
+label_settings = SubResource("LabelSettings_cule8")
+horizontal_alignment = 1
+uppercase = true
+
+[node name="Back" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 19.0
+offset_top = -121.0
+offset_right = 128.0
+offset_bottom = -13.0
+grow_vertical = 0
+texture_normal = ExtResource("2_tmt34")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("3_qs1wt")
+pcAnchorMin = Vector2(0, 1)
+pcAnchorMax = Vector2(0, 1)
+pcOffsetMin = Vector2(19, -121)
+pcOffsetMax = Vector2(128, -13)
+phoneAnchorMin = Vector2(0, 1)
+phoneAnchorMax = Vector2(0, 1)
+phoneOffsetMin = Vector2(19, -121)
+phoneOffsetMax = Vector2(128, -13)

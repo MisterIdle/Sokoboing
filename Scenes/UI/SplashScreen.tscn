@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://hlwy1uxcrc0q"]
+
+[ext_resource type="Script" path="res://Scripts/UI/SplashScreen.cs" id="1_i6t5e"]
+[ext_resource type="Texture2D" uid="uid://dvwh74blvv80f" path="res://Assets/Images/Placeholder/isart.png" id="2_74a0l"]
+
+[node name="SplashScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i6t5e")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -211.0
+offset_top = -133.0
+offset_right = 211.0
+offset_bottom = 133.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="LogoIsart" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -439.5
+offset_top = -441.0
+offset_right = 439.5
+offset_bottom = 441.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_74a0l")

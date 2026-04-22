@@ -1,0 +1,40 @@
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://c502xj1qyurl0"]
+
+[ext_resource type="Texture2D" uid="uid://byxsd232iuput" path="res://Assets/Tilemap/placeholder_tilesheet.png" id="1_1e3b0"]
+[ext_resource type="Texture2D" uid="uid://ulsadn6vlbag" path="res://Assets/Tilemap/final_titlesheet.png" id="2_buuph"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r4dtm"]
+texture = ExtResource("1_1e3b0")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/custom_data_0 = true
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1k0nr"]
+texture = ExtResource("2_buuph")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/custom_data_0 = true
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+
+[resource]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 1
+custom_data_layer_0/name = "Wall"
+custom_data_layer_0/type = 1
+sources/0 = SubResource("TileSetAtlasSource_r4dtm")
+sources/1 = SubResource("TileSetAtlasSource_1k0nr")

@@ -1,0 +1,249 @@
+[gd_scene load_steps=7 format=3 uid="uid://b2xlftid6wf0f"]
+
+[ext_resource type="Script" path="res://Scripts/UI/HighScoresScreen.cs" id="1_7xwny"]
+[ext_resource type="FontFile" uid="uid://bpea0q5l2dtug" path="res://Assets/Font/Cute Dino.otf" id="2_cblam"]
+[ext_resource type="Texture2D" uid="uid://dxmsrf3dw5hal" path="res://Assets/Icon/ic_close.png" id="2_opkvu"]
+[ext_resource type="Script" path="res://Scripts/Tools/ResponsiveElement.cs" id="3_to1im"]
+[ext_resource type="LabelSettings" uid="uid://rt4tb4lxbe2v" path="res://Assets/Font/Title.tres" id="5_vkxs5"]
+
+[sub_resource type="Theme" id="Theme_u7b0w"]
+default_font = ExtResource("2_cblam")
+default_font_size = 40
+Button/constants/h_separation = 0
+
+[node name="HighScoresScreen" type="Control" node_paths=PackedStringArray("backButton", "notOnBoard", "scoreBoard", "startPos")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7xwny")
+backButton = NodePath("Back")
+notOnBoard = NodePath("NotOnBoard")
+scoreBoard = NodePath("ScoreOnBoard2")
+startPos = NodePath("StartPos")
+
+[node name="NotOnBoard" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -164.0
+offset_top = -86.0
+offset_right = 110.0
+offset_bottom = -45.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_u7b0w")
+text = "NotOnBoard
+"
+
+[node name="StartPos" type="Node2D" parent="."]
+position = Vector2(799, 3000)
+
+[node name="Back" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 37.0
+offset_top = -139.0
+offset_right = 146.0
+offset_bottom = -31.0
+grow_vertical = 0
+texture_normal = ExtResource("2_opkvu")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("3_to1im")
+pcAnchorMin = Vector2(0, 1)
+pcAnchorMax = Vector2(0, 1)
+pcOffsetMin = Vector2(99, -181)
+pcOffsetMax = Vector2(208, -73)
+phoneAnchorMin = Vector2(0, 1)
+phoneAnchorMax = Vector2(0, 1)
+phoneOffsetMin = Vector2(99, -181)
+phoneOffsetMax = Vector2(208, -73)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -574.0
+offset_top = 42.0
+offset_right = 574.0
+offset_bottom = 200.0
+grow_horizontal = 2
+text = "ID_HIGHSCORE"
+label_settings = ExtResource("5_vkxs5")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScoreOnBoard2" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 17.0
+offset_top = 161.0
+offset_right = 17.0
+offset_bottom = 161.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="ScoreOnBoard2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -187.0
+offset_top = -457.0
+offset_right = 203.0
+offset_bottom = -388.0
+grow_horizontal = 2
+pivot_offset = Vector2(195, 34)
+size_flags_horizontal = 4
+theme = SubResource("Theme_u7b0w")
+theme_override_font_sizes/font_size = 50
+text = "DEBUG_1"
+
+[node name="Label3" type="Label" parent="ScoreOnBoard2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -186.0
+offset_top = -377.0
+offset_right = 204.0
+offset_bottom = -308.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_u7b0w")
+theme_override_font_sizes/font_size = 50
+text = "DEBUG_2"
+
+[node name="Label4" type="Label" parent="ScoreOnBoard2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -186.0
+offset_top = -297.0
+offset_right = 204.0
+offset_bottom = -228.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_u7b0w")
+theme_override_font_sizes/font_size = 50
+text = "DEBUG_3"
+
+[node name="Label5" type="Label" parent="ScoreOnBoard2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -186.0
+offset_top = -197.0
+offset_right = 204.0
+offset_bottom = -128.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_u7b0w")
+theme_override_font_sizes/font_size = 50
+text = "DEBUG_4"
+
+[node name="Label6" type="Label" parent="ScoreOnBoard2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -186.0
+offset_top = -117.0
+offset_right = 204.0
+offset_bottom = -48.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_u7b0w")
+theme_override_font_sizes/font_size = 50
+text = "DEBUG_5"
+
+[node name="Label7" type="Label" parent="ScoreOnBoard2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -186.0
+offset_top = -37.0
+offset_right = 204.0
+offset_bottom = 32.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_u7b0w")
+theme_override_font_sizes/font_size = 50
+text = "DEBUG_6"
+
+[node name="Label8" type="Label" parent="ScoreOnBoard2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -186.0
+offset_top = 43.0
+offset_right = 204.0
+offset_bottom = 112.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_u7b0w")
+theme_override_font_sizes/font_size = 50
+text = "DEBUG_7"
+
+[node name="Label9" type="Label" parent="ScoreOnBoard2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -186.0
+offset_top = 123.0
+offset_right = 204.0
+offset_bottom = 192.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_u7b0w")
+theme_override_font_sizes/font_size = 50
+text = "DEBUG_8"
+
+[node name="Label10" type="Label" parent="ScoreOnBoard2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -186.0
+offset_top = 203.0
+offset_right = 204.0
+offset_bottom = 272.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_u7b0w")
+theme_override_font_sizes/font_size = 50
+text = "DEBUG_9"
+
+[node name="Label11" type="Label" parent="ScoreOnBoard2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -186.0
+offset_top = 283.0
+offset_right = 204.0
+offset_bottom = 352.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_u7b0w")
+theme_override_font_sizes/font_size = 50
+text = "DEBUG_10"

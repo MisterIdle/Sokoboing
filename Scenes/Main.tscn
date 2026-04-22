@@ -1,0 +1,73 @@
+[gd_scene load_steps=18 format=3 uid="uid://cohap3u1s7slq"]
+
+[ext_resource type="Script" path="res://Scripts/Main.cs" id="1_qfnb6"]
+[ext_resource type="PackedScene" uid="uid://hoj0110n6ytl" path="res://Scenes/Managers/GameManager.tscn" id="2_2kbvk"]
+[ext_resource type="Shader" path="res://Scenes/Managers/MenuManager.gdshader" id="2_exlcj"]
+[ext_resource type="Script" path="res://Scripts/Managers/PhoneChecker.cs" id="2_fmuir"]
+[ext_resource type="Script" path="res://Scripts/Managers/AudioManager.cs" id="2_so5yy"]
+[ext_resource type="AudioStream" uid="uid://cfpdqi0vti862" path="res://Assets/Sounds/win.ogg" id="3_ncvrf"]
+[ext_resource type="AudioStream" uid="uid://x1ucslj75m4w" path="res://Assets/Sounds/footsteps.ogg" id="3_u85dx"]
+[ext_resource type="AudioStream" uid="uid://bsj0t3gojkte7" path="res://Assets/Sounds/hit.ogg" id="4_wv2nf"]
+[ext_resource type="AudioStream" uid="uid://ca28muvla40ab" path="res://Assets/Sounds/wooshcalmshort.ogg" id="5_u2ht2"]
+[ext_resource type="AudioStream" uid="uid://5v7dsn2xhxq4" path="res://Assets/Sounds/wooshcalm.ogg" id="6_7khno"]
+[ext_resource type="Script" path="res://Scripts/UI/FireworkGenerator.cs" id="6_xdwh5"]
+[ext_resource type="AudioStream" uid="uid://hkrclc2futjq" path="res://Assets/Sounds/wooshfast.ogg" id="7_fc5n0"]
+[ext_resource type="PackedScene" uid="uid://cqo3yciyog725" path="res://Scenes/UI/Firework.tscn" id="7_g2ktm"]
+[ext_resource type="AudioStream" uid="uid://b4hvkeqlp7ty4" path="res://Assets/Sounds/bubble.ogg" id="8_bua3l"]
+[ext_resource type="AudioStream" uid="uid://bwraxn2ultp0v" path="res://Assets/Sounds/music.ogg" id="9_hoved"]
+[ext_resource type="PackedScene" uid="uid://c215qxp4e1g65" path="res://Scenes/Managers/MenuManager.tscn" id="13_5x8tm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iuwgp"]
+shader = ExtResource("2_exlcj")
+shader_parameter/bg_color_1 = Color(0.42, 0.55, 0.84, 1)
+shader_parameter/bg_color_2 = Color(0.35, 0.46, 0.76, 1)
+shader_parameter/wavy_speed = 0.1
+shader_parameter/wavy_amplitude = 0.015
+shader_parameter/grid_scale = 4.0
+shader_parameter/stretch = Vector2(1, 1)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_qfnb6")
+
+[node name="AudioManager" type="Node" parent="."]
+script = ExtResource("2_so5yy")
+footStep = ExtResource("3_u85dx")
+hit = ExtResource("4_wv2nf")
+wooshCalmShort = ExtResource("5_u2ht2")
+wooshCalm = ExtResource("6_7khno")
+wooshFast = ExtResource("7_fc5n0")
+bubble = ExtResource("8_bua3l")
+musicUi = ExtResource("9_hoved")
+jingleWin = ExtResource("3_ncvrf")
+
+[node name="Phone" type="Node" parent="."]
+
+[node name="PhoneChecker" type="Node2D" parent="Phone"]
+script = ExtResource("2_fmuir")
+phonePortraitMultiplier = 2.0
+phoneLandscapeMultiplier = 1.0
+pcHeightThreshold = 1920
+
+[node name="Game" type="Node" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Game"]
+
+[node name="ColorRect" type="ColorRect" parent="Game/CanvasLayer"]
+z_index = -50
+material = SubResource("ShaderMaterial_iuwgp")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="GameManager" parent="Game/CanvasLayer" instance=ExtResource("2_2kbvk")]
+
+[node name="FireworkGenerator" type="Node2D" parent="Game/CanvasLayer"]
+script = ExtResource("6_xdwh5")
+fireworkScene = ExtResource("7_g2ktm")
+time = 0.4
+
+[node name="MenuManager" parent="Game/CanvasLayer" instance=ExtResource("13_5x8tm")]

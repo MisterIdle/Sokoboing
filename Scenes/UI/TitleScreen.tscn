@@ -1,0 +1,241 @@
+[gd_scene load_steps=16 format=3 uid="uid://boikgxnn7aohs"]
+
+[ext_resource type="Script" path="res://Scripts/UI/TitleScreen.cs" id="1_1kksc"]
+[ext_resource type="Texture2D" uid="uid://n10kf21mq2e1" path="res://Assets/Images/Definitif/Logo.png" id="2_skbft"]
+[ext_resource type="Texture2D" uid="uid://hg1fqv5ulpfb" path="res://Assets/Images/Definitif/Button.png" id="3_v8jxp"]
+[ext_resource type="Texture2D" uid="uid://davrywbyaw7ta" path="res://Assets/Images/Definitif/ButtonClicked.png" id="4_dj0n8"]
+[ext_resource type="FontFile" uid="uid://bpea0q5l2dtug" path="res://Assets/Font/Cute Dino.otf" id="4_ma8qh"]
+[ext_resource type="PackedScene" uid="uid://c6cxfd5e8leyu" path="res://Scenes/Music.tscn" id="4_rmnvh"]
+[ext_resource type="Texture2D" uid="uid://cih37hbmcm7l" path="res://Assets/Icon/ButtonClicked.png" id="5_skb0d"]
+[ext_resource type="LabelSettings" uid="uid://b1xb2177fol77" path="res://Assets/Font/TextBtn.tres" id="6_vlhdv"]
+[ext_resource type="Script" path="res://Scripts/Tools/ResponsiveElement.cs" id="10_oilmj"]
+[ext_resource type="Texture2D" uid="uid://6uokbg5njv5p" path="res://Assets/Icon/ic_home.png" id="11_dr7gl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ww63y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pmqyq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_80qwh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7ypf3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cmfya"]
+
+[node name="TitleScreen" type="Control" node_paths=PackedStringArray("title", "playBtn", "playLabel", "helpBtn", "helpLabel", "scoreBtn", "scoreLabel", "creditBtn", "creditLabel", "quitBtn", "musicBtn", "playerConnected")]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1kksc")
+title = NodePath("Title")
+playBtn = NodePath("VBoxContainer2/PlayButton")
+playLabel = NodePath("VBoxContainer2/PlayButton/Label")
+helpBtn = NodePath("VBoxContainer2/HelpButton")
+helpLabel = NodePath("VBoxContainer2/HelpButton/Label")
+scoreBtn = NodePath("VBoxContainer2/ScoreButton")
+scoreLabel = NodePath("VBoxContainer2/ScoreButton/Label")
+creditBtn = NodePath("VBoxContainer2/Credits")
+creditLabel = NodePath("VBoxContainer2/Credits/Label")
+quitBtn = NodePath("Quit")
+musicBtn = NodePath("Music")
+playerConnected = NodePath("CurrentUser")
+
+[node name="Title" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -472.0
+offset_top = 65.0
+offset_right = 456.0
+offset_bottom = 409.0
+grow_horizontal = 2
+texture = ExtResource("2_skbft")
+expand_mode = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -194.5
+offset_right = 400.0
+offset_bottom = 532.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="PlayButton" type="TextureButton" parent="VBoxContainer2"]
+custom_minimum_size = Vector2(800, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("3_v8jxp")
+texture_pressed = ExtResource("4_dj0n8")
+texture_hover = ExtResource("5_skb0d")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="VBoxContainer2/PlayButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "ID_PLAY"
+label_settings = ExtResource("6_vlhdv")
+
+[node name="HelpButton" type="TextureButton" parent="VBoxContainer2"]
+custom_minimum_size = Vector2(800, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("3_v8jxp")
+texture_pressed = ExtResource("4_dj0n8")
+texture_hover = ExtResource("5_skb0d")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="VBoxContainer2/HelpButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "ID_HELP"
+label_settings = ExtResource("6_vlhdv")
+
+[node name="ScoreButton" type="TextureButton" parent="VBoxContainer2"]
+custom_minimum_size = Vector2(800, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("3_v8jxp")
+texture_pressed = ExtResource("4_dj0n8")
+texture_hover = ExtResource("5_skb0d")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="VBoxContainer2/ScoreButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "ID_HIGHSCORE"
+label_settings = ExtResource("6_vlhdv")
+
+[node name="Credits" type="TextureButton" parent="VBoxContainer2"]
+custom_minimum_size = Vector2(800, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("3_v8jxp")
+texture_pressed = ExtResource("4_dj0n8")
+texture_hover = ExtResource("5_skb0d")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="VBoxContainer2/Credits"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "ID_CREDITS"
+label_settings = ExtResource("6_vlhdv")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -560.0
+offset_top = 19.0
+offset_right = -24.0
+offset_bottom = 119.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("4_ma8qh")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ww63y")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_pmqyq")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_80qwh")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_7ypf3")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cmfya")
+text = "ID_LOCALISATION"
+alignment = 2
+icon_alignment = 1
+
+[node name="CurrentUser" type="Label" parent="."]
+layout_mode = 1
+offset_left = 13.0
+offset_top = 19.0
+offset_right = 566.0
+offset_bottom = 85.0
+theme_override_fonts/font = ExtResource("4_ma8qh")
+theme_override_font_sizes/font_size = 60
+text = "ID_CURRENT_USER"
+vertical_alignment = 1
+
+[node name="Music" parent="." instance=ExtResource("4_rmnvh")]
+layout_mode = 1
+offset_left = -177.0
+offset_top = -152.0
+offset_right = -27.0
+offset_bottom = -14.0
+pcOffsetMin = Vector2(-147, -138)
+pcOffsetMax = Vector2(-38, -30)
+phoneOffsetMin = Vector2(-147, -138)
+phoneOffsetMax = Vector2(-38, -30)
+
+[node name="Quit" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 38.0
+offset_top = -152.0
+offset_right = 170.0
+offset_bottom = -14.0
+grow_vertical = 0
+texture_normal = ExtResource("11_dr7gl")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("10_oilmj")
+pcAnchorMin = Vector2(0, 1)
+pcAnchorMax = Vector2(0, 1)
+pcOffsetMin = Vector2(38, -152)
+pcOffsetMax = Vector2(170, -14)
+phoneAnchorMin = Vector2(0, 1)
+phoneAnchorMax = Vector2(0, 1)
+phoneOffsetMin = Vector2(38, -152)
+phoneOffsetMax = Vector2(170, -14)
+
+[connection signal="pressed" from="Button" to="." method="SwitchLanguage"]

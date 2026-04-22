@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://btqxjgij4xxon"]
+
+[ext_resource type="Script" path="res://Scripts/GameObject/Objects/Target.cs" id="1_eekxq"]
+[ext_resource type="Texture2D" uid="uid://ixbfe1citfr0" path="res://Assets/Images/Placeholder/target.png" id="1_sgsk4"]
+[ext_resource type="Texture2D" uid="uid://b3qa8q5tfnnxh" path="res://Assets/Images/Definitif/Target.png" id="3_1fbwr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j2x7q"]
+size = Vector2(52, 52)
+
+[node name="Target" type="Area2D" node_paths=PackedStringArray("sprite")]
+script = ExtResource("1_eekxq")
+sprite = NodePath("Sprite2D")
+placeholder = ExtResource("1_sgsk4")
+final = ExtResource("3_1fbwr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_sgsk4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_j2x7q")
+debug_color = Color(0.701961, 0.27451, 1, 0.419608)

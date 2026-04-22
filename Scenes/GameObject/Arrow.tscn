@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://5ma3us3vjqu"]
+
+[ext_resource type="Texture2D" uid="uid://by1buseh3yufn" path="res://Assets/Images/Placeholder/Arrow.png" id="1_0i2no"]
+[ext_resource type="Script" path="res://Scripts/GameObject/Objects/Arrow.cs" id="1_3mr4w"]
+[ext_resource type="Texture2D" uid="uid://bghterehct17u" path="res://Assets/Images/Definitif/Arrow.png" id="3_r5jw2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_arsse"]
+size = Vector2(36, 42)
+
+[node name="Arrow" type="Area2D" node_paths=PackedStringArray("sprite", "spriteEffect")]
+script = ExtResource("1_3mr4w")
+sprite = NodePath("Up")
+spriteEffect = NodePath("UpEffect")
+placeholder = ExtResource("1_0i2no")
+final = ExtResource("3_r5jw2")
+
+[node name="UpEffect" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 0, 0)
+scale = Vector2(0.5, 0.533)
+texture = ExtResource("1_0i2no")
+
+[node name="Up" type="Sprite2D" parent="."]
+scale = Vector2(0.44, 0.523)
+texture = ExtResource("1_0i2no")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_arsse")
+debug_color = Color(0.815686, 0.407843, 0, 0.419608)

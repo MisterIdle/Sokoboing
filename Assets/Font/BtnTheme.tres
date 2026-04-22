@@ -1,0 +1,28 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://8wep2us2pkd7"]
+
+[ext_resource type="FontFile" uid="uid://bpea0q5l2dtug" path="res://Assets/Font/Cute Dino.otf" id="1_sf284"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iniw1"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ycwew"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+expand_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ranh3"]
+draw_center = false
+
+[resource]
+default_font = ExtResource("1_sf284")
+default_font_size = 55
+Label/colors/font_color = Color(1, 0.27451, 0.27451, 1)
+Label/styles/normal = null
+LineEdit/colors/font_color = Color(0.0923973, 0.092397, 0.092397, 1)
+LineEdit/colors/font_placeholder_color = Color(0, 0, 0, 0.6)
+LineEdit/styles/focus = SubResource("StyleBoxFlat_iniw1")
+LineEdit/styles/normal = SubResource("StyleBoxFlat_ycwew")
+LineEdit/styles/read_only = SubResource("StyleBoxTexture_ranh3")

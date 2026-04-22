@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://c6cxfd5e8leyu"]
+
+[ext_resource type="Texture2D" uid="uid://4grt0e0ec5qu" path="res://Assets/Icon/ic_music_on.png" id="1_ksh6y"]
+[ext_resource type="Script" path="res://Scripts/Tools/ResponsiveElement.cs" id="2_2dllb"]
+[ext_resource type="Texture2D" uid="uid://cl3p3nbp33b2u" path="res://Assets/Icon/ic_music_off.png" id="2_78a7y"]
+[ext_resource type="Script" path="res://Scripts/UI/MusicButton.cs" id="3_742me"]
+
+[node name="Music" type="TextureButton"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -201.0
+offset_top = -161.0
+offset_right = -35.0
+offset_bottom = -32.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("1_ksh6y")
+texture_pressed = ExtResource("2_78a7y")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("2_2dllb")
+pcAnchorMin = Vector2(1, 1)
+pcAnchorMax = Vector2(1, 1)
+pcOffsetMin = Vector2(-201, -161)
+pcOffsetMax = Vector2(-35, -32)
+phoneAnchorMin = Vector2(1, 1)
+phoneAnchorMax = Vector2(1, 1)
+phoneOffsetMin = Vector2(-201, -161)
+phoneOffsetMax = Vector2(-35, -32)
+
+[node name="Music" type="Node2D" parent="." node_paths=PackedStringArray("musicBtn")]
+script = ExtResource("3_742me")
+musicBtn = NodePath("..")
+musicOnTexture = ExtResource("1_ksh6y")
+musicOffTexture = ExtResource("2_78a7y")

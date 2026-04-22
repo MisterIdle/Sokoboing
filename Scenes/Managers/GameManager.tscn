@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://hoj0110n6ytl"]
+
+[ext_resource type="Script" path="res://Scripts/Managers/GameManager.cs" id="1_f1wci"]
+[ext_resource type="PackedScene" uid="uid://bt02oqw1251nb" path="res://Scenes/Managers/Grid/GridManager.tscn" id="2_e5evi"]
+
+[node name="GameManager" type="Node2D" node_paths=PackedStringArray("camera")]
+z_index = 100
+script = ExtResource("1_f1wci")
+delayBeforeFireworks = 0.1
+fireworksBurstCount = 10
+camera = NodePath("Camera2D")
+
+[node name="GridManager" parent="." instance=ExtResource("2_e5evi")]
+marginPC = 1.1
+marginPhone = 1.1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0

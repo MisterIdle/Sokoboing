@@ -1,0 +1,46 @@
+[gd_scene load_steps=9 format=3 uid="uid://hjrce3usqf4r"]
+
+[ext_resource type="Texture2D" uid="uid://ldv7l1ab5qv" path="res://Assets/Images/Placeholder/river.png" id="1_b0xyb"]
+[ext_resource type="Script" path="res://Scripts/GameObject/Objects/River.cs" id="1_f7i48"]
+[ext_resource type="Texture2D" uid="uid://vl0divfeelyg" path="res://Assets/Images/Definitif/ToxicLiquid.png" id="3_x7c5s"]
+[ext_resource type="Texture2D" uid="uid://c2yv5jm10jiv" path="res://Assets/Images/Definitif/SkullParticle.png" id="4_5e5if"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oomq3"]
+size = Vector2(54, 56)
+
+[sub_resource type="Gradient" id="Gradient_nxf5f"]
+offsets = PackedFloat32Array(0.725869, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_q74qp"]
+gradient = SubResource("Gradient_nxf5f")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_u8s7j"]
+particle_flag_disable_z = true
+emission_shape = 2
+emission_sphere_radius = 10.0
+angular_velocity_min = -10.0
+angular_velocity_max = 10.0
+gravity = Vector3(0, -10, 0)
+scale_min = 0.5
+color_ramp = SubResource("GradientTexture1D_q74qp")
+
+[node name="River" type="Area2D" node_paths=PackedStringArray("sprite")]
+collision_layer = 2
+script = ExtResource("1_f7i48")
+sprite = NodePath("Sprite2D")
+placeholder = ExtResource("1_b0xyb")
+final = ExtResource("3_x7c5s")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_b0xyb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_oomq3")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+amount = 2
+process_material = SubResource("ParticleProcessMaterial_u8s7j")
+texture = ExtResource("4_5e5if")
+lifetime = 3.0
+randomness = 1.0

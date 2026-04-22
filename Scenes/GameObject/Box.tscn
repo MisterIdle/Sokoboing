@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://caws8s5qa3emn"]
+
+[ext_resource type="Texture2D" uid="uid://b4c3taxogqk8g" path="res://Assets/Images/Placeholder/crate.png" id="1_1vrn8"]
+[ext_resource type="Script" path="res://Scripts/GameObject/Objects/Box.cs" id="1_85qf6"]
+[ext_resource type="Texture2D" uid="uid://dtuo8dmpuablb" path="res://Assets/Images/Definitif/Box.png" id="3_grbpi"]
+[ext_resource type="Texture2D" uid="uid://bm40u1uhmyh0k" path="res://Assets/Images/Definitif/BoxPushed.png" id="3_utqrj"]
+[ext_resource type="FontFile" uid="uid://xrq4s51s2r5r" path="res://Assets/Font/Game Bubble.otf" id="5_vq6gg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_555by"]
+font = ExtResource("5_vq6gg")
+font_size = 37
+outline_size = 10
+outline_color = Color(0.854703, 0.634907, 7.70092e-07, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5vawv"]
+size = Vector2(62, 62)
+
+[node name="Box" type="Area2D" node_paths=PackedStringArray("text", "sprite")]
+z_index = 1
+script = ExtResource("1_85qf6")
+text = NodePath("Sprite2D/Label")
+sprite = NodePath("Sprite2D")
+placeholderMoving = ExtResource("1_1vrn8")
+finalMoving = ExtResource("3_utqrj")
+moveDuration = 0.25
+moveTweenStrength = 0.3
+placeholder = ExtResource("1_1vrn8")
+final = ExtResource("3_grbpi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("1_1vrn8")
+
+[node name="Label" type="Label" parent="Sprite2D"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -54.2222
+offset_top = -64.2222
+offset_right = -10.2222
+offset_bottom = -20.2222
+grow_horizontal = 2
+grow_vertical = 2
+text = "0"
+label_settings = SubResource("LabelSettings_555by")
+horizontal_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+scale = Vector2(0.85, 0.85)
+shape = SubResource("RectangleShape2D_5vawv")
+debug_color = Color(0.992157, 0, 0.227451, 0.419608)

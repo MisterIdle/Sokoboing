@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://rt4tb4lxbe2v"]
+
+[ext_resource type="FontFile" uid="uid://xrq4s51s2r5r" path="res://Assets/Font/Game Bubble.otf" id="1_bp41v"]
+
+[resource]
+font = ExtResource("1_bp41v")
+font_size = 150

@@ -1,0 +1,62 @@
+[gd_scene load_steps=12 format=3 uid="uid://c215qxp4e1g65"]
+
+[ext_resource type="Script" path="res://Scripts/Managers/MenuManager.cs" id="1_tkubw"]
+[ext_resource type="PackedScene" uid="uid://hlwy1uxcrc0q" path="res://Scenes/UI/SplashScreen.tscn" id="2_blxui"]
+[ext_resource type="PackedScene" uid="uid://cyegix4oyo2sv" path="res://Scenes/UI/Login.tscn" id="3_yccg2"]
+[ext_resource type="PackedScene" uid="uid://d1ako6c74ie6u" path="res://Scenes/UI/SelectorScreen.tscn" id="5_wbkpl"]
+[ext_resource type="PackedScene" uid="uid://0oi2mregw00b" path="res://Scenes/HUD/Hud.tscn" id="6_4asiu"]
+[ext_resource type="PackedScene" uid="uid://ds17qgilwo1ct" path="res://Scenes/UI/Help.tscn" id="6_voacv"]
+[ext_resource type="PackedScene" uid="uid://boikgxnn7aohs" path="res://Scenes/UI/TitleScreen.tscn" id="6_xadei"]
+[ext_resource type="PackedScene" uid="uid://b2xlftid6wf0f" path="res://Scenes/UI/HighScoresScreen.tscn" id="8_6bmdf"]
+[ext_resource type="PackedScene" uid="uid://b0yylqpb5wcws" path="res://Scenes/UI/LevelWinScreen.tscn" id="9_w6soy"]
+[ext_resource type="PackedScene" uid="uid://dcurrg4jvww41" path="res://Scenes/UI/FinalWinScreen.tscn" id="11_dbgfg"]
+[ext_resource type="PackedScene" uid="uid://bstxwvv1hbtk7" path="res://Scenes/UI/Credits.tscn" id="12_oeoeg"]
+
+[node name="MenuManager" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tkubw")
+
+[node name="SplashScreen" parent="." instance=ExtResource("2_blxui")]
+layout_mode = 1
+
+[node name="Login" parent="." instance=ExtResource("3_yccg2")]
+visible = false
+layout_mode = 1
+
+[node name="TitleScreen" parent="." instance=ExtResource("6_xadei")]
+visible = false
+layout_mode = 1
+
+[node name="SelectorScreen" parent="." instance=ExtResource("5_wbkpl")]
+visible = false
+layout_mode = 1
+levelButtonFontSize = 45
+
+[node name="Help" parent="." instance=ExtResource("6_voacv")]
+visible = false
+layout_mode = 1
+
+[node name="Hud" parent="." instance=ExtResource("6_4asiu")]
+visible = false
+layout_mode = 1
+
+[node name="HighScoresScreen" parent="." instance=ExtResource("8_6bmdf")]
+visible = false
+layout_mode = 1
+
+[node name="LevelWinScreen" parent="." instance=ExtResource("9_w6soy")]
+visible = false
+layout_mode = 1
+
+[node name="FinalWinScreen" parent="." instance=ExtResource("11_dbgfg")]
+visible = false
+layout_mode = 1
+
+[node name="Credits" parent="." instance=ExtResource("12_oeoeg")]
+visible = false
+layout_mode = 1

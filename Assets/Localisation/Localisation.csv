@@ -1,0 +1,43 @@
+key,en,fr
+ID_LOGIN,Login,Connexion
+ID_NAME,Username,Identifiant
+ID_PASSWORD,Password,Mot de passe
+ID_PLAY,Play,Jouer
+ID_HELP,Help,Aide
+ID_HIGHSCORE,Highscore,Records
+ID_LEVEL_SELECTOR,Levels,Niveaux
+ID_LEVEL,Level ,Niveau 
+ID_LEVEL_NAME,Creator : ,Createur : 
+ID_MAX_PAR,Par :,Par :
+ID_PAR,Steps :,Pas :
+ID_TUTO,Tutorial,Tutoriel
+ID_LOCALISATION,EN,FR
+ID_SCORE,Score,Score
+UI_NEXT,Back,Retour
+ID_HELP_A,"The goal is to fill all targets 
+with the available boxes","Le but est de remplir toutes les cibles 
+avec les boites disponibles"
+ID_HELP_B,"Each box moves the number of cases 
+indicated on its head","Chaque boite se deplace du nombre 
+de cases indique sur sa tete"
+ID_HELP_C,"The boxes push each other, 
+unless they are stuck together","Les boites se poussent, 
+sauf si elles sont collees"
+ID_HELP_D,The boxes follow the arrows's direction,Les boites suivent la direction des fleches
+ID_HELP_E,"The boxes can go through acid
+but the player cannot","Les boites peuvent traverser l'acide
+mais le joueur ne peut pas"
+ID_TOO_SHORT_NAME,Name too short,Nom trop court
+ID_TOO_SHORT_PASSWORD,Password too short,Mot-de-passe trop court
+ID_INVALID_CHAR,Invalid character,Charactère invalide
+ID_CURRENT_USER,User : ,Utilisateur : 
+ID_CREDITS,Credits,Credits
+ID_NEXT,Next,Suivant
+ID_PROJECT_MANAGER,Project Manager,Chef de projet
+ID_GAME_DIRECTOR,Game Director,Directeur de jeu
+ID_LEAD_GAME_DESIGNER,Lead Game Designer,Lead Concepteur de jeu
+ID_LEAD_GAME_ART,Lead UX,Lead UX
+ID_GAME_DESIGN_AND_PROGRAMMING,Game Design and Programming,Game Design et Programmation
+ID_ART_DIRECTOR,Art Director,Directeur Artistique
+ID_MUSIC_AND_SOUND_DESIGNER,Music and Sound Designer,Compositeur et Sound Designer
+ID_GAME_ART,Game Art,Game Artist
